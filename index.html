@@ -20,7 +20,7 @@
             },
         }
 
-
+        const destinationURL = "https://mailoffer.explorecredit.com/"
         const { searchParams } = new URL(initialURL)
         let pin = searchParams.get('pin')
 
@@ -41,17 +41,18 @@
 
                     if (jsondata === 0) return
 
-                    respObjt = JSON.parse(jsondata.replace(/'/g, '"'))
 
-                    respObjt = JSON.parse(jsondata.replace(/'/g, '"'))
-                    let finalOutput = JSON.stringify(respObjt, null, 2)
 
-                    name = respObjt.FIRST_NAME
-                    amount = respObjt.LINE_AMOUNT.replace(',', '')
+
+                    name = jsondata.FIRST_NAME
+                    amount = jsondata.LINE_AMOUNT.replace(',', '')
 
                     if (name != "" && amount != 0) {
 
                         aditionalParams = "?pin=" + pin + "&name=" + name + "&amount=" + amount + "&" + UTM_BASE + "&utm_term=qr"
+
+                        window.location.replace(destinationURL+aditionalParams);
+
 
                     }
 
