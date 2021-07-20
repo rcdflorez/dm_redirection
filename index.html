@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        const init = {
+            headers: {
+                "content-type": "application/json;charset=UTF-8",
+                "Access-Control-Allow-Origin": "*",
+            },
+        }
+
+
+        const { searchParams } = new URL(request.url)
+        let pin = searchParams.get('pin')
+
+        console.log(pin)
+        let name = ""
+        let amount = 0
+        let aditionalParams = ""
+        const UTM_BASE =
+            "utm_medium=directmail&utm_source=lsdm&utm_campaign=prescreen072021"
+
+        return new Response(JSON.stringify(request.url), init)
+
+    </script>
+
+</body>
+
+</html>
