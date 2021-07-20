@@ -11,6 +11,8 @@
 <body>
     <script>
 
+        let initialURL = window.location.href;
+
         const init = {
             headers: {
                 "content-type": "application/json;charset=UTF-8",
@@ -19,7 +21,7 @@
         }
 
 
-        const { searchParams } = new URL(request.url)
+        const { searchParams } = new URL(initialURL)
         let pin = searchParams.get('pin')
 
         console.log(pin)
@@ -29,7 +31,7 @@
         const UTM_BASE =
             "utm_medium=directmail&utm_source=lsdm&utm_campaign=prescreen072021"
 
-        return new Response(JSON.stringify(request.url), init)
+        return (initialURL)
 
     </script>
 
